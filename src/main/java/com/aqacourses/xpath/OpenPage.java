@@ -51,10 +51,8 @@ public class OpenPage {
         String priceGalaxy = driver.findElement(By.xpath("//div[@class='ptsColFooter']//span[contains(.,'$')]")).getAttribute("textContent");
         System.out.println("Текущая цена на телефон Samsung Galaxy - " + actualGalaxyPrice);
         System.out.println("Цена на телефон Samsung Galaxy - " + priceGalaxy);
-        double actDo = Double.parseDouble(actualGalaxyPrice);
-        double priceDo = Double.parseDouble(priceGalaxy);
-//        System.out.println(actDo);                   //не понятно чего не выводится в консоль
-//        System.out.println(priceDo);
+        double actDo = Double.parseDouble(actualGalaxyPrice.replace("$",""));
+        double priceDo = Double.parseDouble(priceGalaxy.replace("$",""));
         System.out.println("Разница в цене: "+(priceDo-actDo));
 
     }
